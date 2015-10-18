@@ -33,9 +33,7 @@ bool solve (char in[], int lenIn)
 
 int main()
 {
-	char a[1000];
-	cin >> a;
-	cout << solve(a, strlen(a));
-	system("pause");
+	
+
 	return 0;
 }
