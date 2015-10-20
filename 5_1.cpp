@@ -29,11 +29,20 @@ bool solve (char in[], int lenIn)
 	if (top==-1) return true;
 	else return false;
 }
-		
 
+void assert(char* str, int length, bool test)
+{
+	if (solve(str, length) == test) cout << "OK" << endl;
+	else cout << "FAIL" << endl;
+}
+		
 int main()
 {
-	
+	assert("(([])({}))", 10, true);
+	assert(")))", 3, false);
+	assert("()()())}}}{{}", 13, false);
+	assert("(((()()", 7, false);
+	assert("[(){}{{}}]((({{}})))", 20, true);
 
 	return 0;
 }
