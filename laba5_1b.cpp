@@ -73,10 +73,20 @@ bool bracket(char* str)
 	else return true;
 }
 
+void assert (char* test, bool ans)
+{
+	if (bracket(test) == ans) cout << "OK" << endl;
+	else cout << "FAIL" << endl;
+}
+
 int main()
 {
-	char string[100];
-	cin >> string;
-	cout << bracket(string) << endl;
+	assert ("((()))", true);
+	assert ("(())(}", false);
+	assert ("[({)}]()(())", false);
+	assert ("((([]){})){[[[]]]}(())", true);
+	assert ("(){}[](((())))({})[]", true);
+	assert ("}({{}})[]()[[]]", false);
+
 	return 0;
 }
