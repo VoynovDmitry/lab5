@@ -3,7 +3,13 @@
 using namespace std;
 
 char stackOut[1000], stackTemp[1000]; // Создаю стеки: основной, в котором хранится польская запись, и временный, в который закидываются операции
-int topOut = -1, topTemp = -1; // Инициализация верхушек стеков
+int topOut, topTemp; // Инициализация верхушек стеков
+
+void initstacks()
+{
+	topOut = -1;
+	topTemp = -1;
+}
 
 void pushFTTO() // Функция перемещения операции из временного стека в основной + добавление в конце запятой
 {
@@ -25,6 +31,7 @@ int priority(char op) // Возврат приоритета операции
 
 double solve(char in[], int lenIn)
 {
+	initstacks();
 	int pos=0;
 	for (  ;pos<lenIn;pos++) // Идем по входной строке
 	{
