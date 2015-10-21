@@ -124,8 +124,18 @@ double solve(char in[], int lenIn)
 	return a[0];   // Единственное оставшееся значение и есть результат
 }
 
+void assert(char *str, int length, double ans)
+{
+	if (solve(str, length) == ans) cout << "OK" << endl;
+	else cout << "FAIL" << endl;
+}
+
 int main()
 {
-
+	assert("19/2+37*1-(3+5)", 15, 38.5);
+	assert("(25*40)/10", 10, 100);
+	assert("2+3*(4-8/2+4/(2-1))", 19, 14);
+	assert("1488-2*2*39+5-(1/2)*(1/5)", 25, 1336.9);
+	assert("1+(1/5)-(8*(5+1))/3-10", 22, -24.8);
 	return 0;
 }
